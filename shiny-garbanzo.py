@@ -38,7 +38,7 @@ class Proxy(BaseHTTPRequestHandler):
 known_args = Parse_args()
 
 print("[i] Starting server on %d PORT" % known_args.port)
-print("Start with this:")
-print("sqlmap -u \"%s\" --data \"cmd=\" -p \"cmd\" --method POST" % (known_args.host +":"+ str(known_args.port)))
+print("[i] Start with this:")
+print("[i] sqlmap -u \"%s\" --data \"cmd=\" -p \"cmd\" --method POST" % (known_args.host +":"+ str(known_args.port)))
 with HTTPServer((known_args.host, known_args.port), Proxy) as httpd:
     httpd.serve_forever()
