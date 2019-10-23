@@ -17,4 +17,4 @@ optional arguments:
                         to pass SQLMAP's input
 ```
 
-Big ups to (https://twitter.com/kolokokop)#kolokokop
+Big ups to [https://twitter.com/kolokokop](#kolokokop)
