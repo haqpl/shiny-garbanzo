@@ -8,10 +8,10 @@ import argparse
 
 def Parse_args():
     parser = argparse.ArgumentParser(description='Non-HTTP sqlmap proxy')
-    parser.add_argument("--host", default="127.0.0.1", help="IP to listen on")
-    parser.add_argument("--port", type=int, default=31337, help="Port to listen on")
-    parser.add_argument("--tool", help="Tool to use for non-HTTP communication")
-    parser.add_argument("--arguments", help="Arguments passed to interesting tool, use SQLMAP token to pass SQLMAP's input", type=str, nargs='*')
+    parser.add_argument("--host", default="127.0.0.1", help="IP to listen on.")
+    parser.add_argument("--port", type=int, default=31337, help="Port to listen on.")
+    parser.add_argument("--tool", help="Tool to use for non-HTTP communication.")
+    parser.add_argument("--arguments", help="Arguments passed to interesting tool, use SQLMAP token to pass SQLMAP's input there.", type=str, nargs='*')
     args = parser.parse_args()
     return args
 
@@ -37,6 +37,8 @@ class Proxy(BaseHTTPRequestHandler):
 
 known_args = Parse_args()
 
-print("[i] Starting server on %d PORT, now fire SQLMAP on it and grab a popcorn ;)" % known_args.port)
+print("[i] Starting server on %d PORT" % known_args.port)
+print("Start with this:")
+print("sqlmap -u \"%s\" --data \"cmd=\" -p \"cmd\" --method POST" % (known_args.host +":"+ str(known_args.port)))
 with HTTPServer((known_args.host, known_args.port), Proxy) as httpd:
     httpd.serve_forever()
