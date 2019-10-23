@@ -5,7 +5,6 @@ from shlex import quote
 import subprocess
 import sys
 import argparse
-import var_dump
 
 def Parse_args():
     parser = argparse.ArgumentParser(description='Non-HTTP sqlmap proxy')
