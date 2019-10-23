@@ -16,3 +16,5 @@ optional arguments:
                         Arguments passed to interesting tool, use SQLMAP token
                         to pass SQLMAP's input
 ```
+
+Big ups to (https://twitter.com/kolokokop)#kolokokop
