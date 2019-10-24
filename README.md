@@ -1,6 +1,8 @@
 # shiny-garbanzo
 Introducing SQLMAP into non-HTTP services.
 
+[https://haqpl.github.io/Introducing-sqlmap-into-non-HTTP-services](https://haqpl.github.io/Introducing-sqlmap-into-non-HTTP-services)
+
 ```
 usage: shiny-garbanzo.py [-h] [--host HOST] [--port PORT] [--tool TOOL]
                          [--arguments [ARGUMENTS [ARGUMENTS ...]]]
